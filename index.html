@@ -11,7 +11,7 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@300;400;600&family=Brittany&display=swap"
     rel="stylesheet">
   <style>
     :root {
@@ -33,6 +33,10 @@
     h3,
     .serif {
       font-family: 'Cormorant Garamond', serif;
+    }
+
+    .brittany-font {
+      font-family: 'Brittany', cursive;
     }
 
     .grain {
@@ -152,6 +156,68 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* New Menu Section Styles */
+    .menu-category-card {
+      background: white;
+      border: 1px solid rgba(44, 24, 16, 0.1);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .menu-category-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent-gold);
+      box-shadow: 0 20px 40px rgba(44, 24, 16, 0.1);
+    }
+
+    .menu-item-card {
+      background: white;
+      border-bottom: 1px solid rgba(44, 24, 16, 0.08);
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+
+    .menu-item-card:hover {
+      background: #F9F5F0;
+      transform: translateX(0);
+    }
+
+    .menu-item-card:nth-child(even) {
+      transform: translateX(20px);
+    }
+
+    .price-tag {
+      background: linear-gradient(135deg, var(--accent-gold), #D4B074);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .menu-item-card:hover .price-tag {
+      transform: scale(1.05);
+    }
+
+    .menu-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--accent-gold), transparent);
+      margin: 2rem 0;
+    }
+
+    .menu-icon {
+      color: var(--accent-gold);
+      transition: all 0.3s ease;
+    }
+
+    .menu-category-card:hover .menu-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
   </style>
 </head>
 
@@ -166,6 +232,7 @@
     <div class="hidden md:flex gap-10 text-xs uppercase tracking-[0.2em] font-semibold text-white">
       <a href="#about" class="nav-link">The Story</a>
       <a href="#menu" class="nav-link">Signature</a>
+      <a href="#drinks-menu" class="nav-link">Drinks Menu</a>
       <a href="#reviews" class="nav-link">Gatherings</a>
       <a href="#location" class="nav-link">Visit Us</a>
     </div>
@@ -182,6 +249,7 @@
     </button>
     <a href="#about" class="text-2xl serif italic mobile-link">The Story</a>
     <a href="#menu" class="text-2xl serif italic mobile-link">Signature</a>
+    <a href="#drinks-menu" class="text-2xl serif italic mobile-link">Drinks Menu</a>
     <a href="#reviews" class="text-2xl serif italic mobile-link">Gatherings</a>
     <a href="#location" class="text-2xl serif italic mobile-link">Visit Us</a>
   </div>
@@ -250,8 +318,196 @@
     </div>
   </section>
 
+  <!-- Drinks Menu Section -->
+  <section id="drinks-menu" class="py-16 md:py-24 px-6 md:px-24 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-[#C5A059] font-semibold text-xs uppercase tracking-widest block mb-4">Curated Collection</span>
+        <h2 class="text-4xl md:text-6xl mb-6 serif italic">Sip & Savour</h2>
+        <div class="h-px w-24 bg-[#C5A059] mx-auto"></div>
+        <p class="text-coffee-medium mt-8 max-w-2xl mx-auto font-light italic">
+          Our carefully crafted beverages, where every sip tells a story of flavor and finesse.
+        </p>
+      </div>
+
+      <!-- Brews Category -->
+      <div class="mb-20">
+        <div class="flex items-center gap-4 mb-10">
+          <div class="p-3 bg-[#F9F5F0] rounded-full">
+            <i data-lucide="coffee" class="w-8 h-8 menu-icon"></i>
+          </div>
+          <div>
+            <h3 class="text-3xl md:text-4xl serif italic">Hot Brews</h3>
+            <p class="text-coffee-medium/60 text-sm">Artisanal coffee creations</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-16">
+          <div class="menu-category-card p-8 rounded-lg">
+            <div class="flex items-start justify-between mb-6">
+              <div>
+                <h4 class="text-2xl serif italic mb-2">Cafe Mocha</h4>
+                <p class="text-coffee-medium/70 text-sm">Rich chocolate meets espresso</p>
+              </div>
+              <span class="price-tag">₹249</span>
+            </div>
+            <p class="text-coffee-medium/80 mb-4 text-sm leading-relaxed">
+              A harmonious blend of premium espresso, steamed milk, and our signature dark chocolate sauce, topped with whipped cream.
+            </p>
+            <div class="flex items-center gap-2 text-[#C5A059] text-sm">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <span class="font-semibold">Best Seller</span>
+            </div>
+          </div>
+
+          <div class="menu-category-card p-8 rounded-lg">
+            <div class="flex items-start justify-between mb-6">
+              <div>
+                <h4 class="text-2xl serif italic mb-2">Hazelnut Latte</h4>
+                <p class="text-coffee-medium/70 text-sm">Nutty warmth in every sip</p>
+              </div>
+              <span class="price-tag">₹229</span>
+            </div>
+            <p class="text-coffee-medium/80 mb-4 text-sm leading-relaxed">
+              Smooth espresso combined with steamed milk and aromatic hazelnut syrup, finished with a delicate foam crown.
+            </p>
+            <div class="flex items-center gap-2 text-[#C5A059] text-sm">
+              <i data-lucide="heart" class="w-4 h-4"></i>
+              <span class="font-semibold">Most Loved</span>
+            </div>
+          </div>
+
+          <div class="menu-category-card p-8 rounded-lg">
+            <div class="flex items-start justify-between mb-6">
+              <div>
+                <h4 class="text-2xl serif italic mb-2">Biscoff Piccolo</h4>
+                <p class="text-coffee-medium/70 text-sm">Cookie bliss in a cup</p>
+              </div>
+              <span class="price-tag">₹269</span>
+            </div>
+            <p class="text-coffee-medium/80 mb-4 text-sm leading-relaxed">
+              A strong ristretto shot with velvety milk, infused with Lotus Biscoff caramel and topped with crumbled cookie.
+            </p>
+            <div class="flex items-center gap-2 text-[#C5A059] text-sm">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+              <span class="font-semibold">New Arrival</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-divider"></div>
+
+      <!-- Iced Chocolates Category -->
+      <div class="mb-20">
+        <div class="flex items-center gap-4 mb-10">
+          <div class="p-3 bg-[#F9F5F0] rounded-full">
+            <i data-lucide="ice-cream" class="w-8 h-8 menu-icon"></i>
+          </div>
+          <div>
+            <h3 class="text-3xl md:text-4xl serif italic">Iced Chocolates</h3>
+            <p class="text-coffee-medium/60 text-sm">Chilled chocolate perfection</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="menu-item-card rounded-lg">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <h4 class="text-xl serif italic mb-1">Belgian Chocolate</h4>
+                <p class="text-coffee-medium/70 text-sm">70% dark cocoa richness</p>
+              </div>
+              <span class="price-tag">₹279</span>
+            </div>
+            <p class="text-coffee-medium/80 text-sm leading-relaxed">
+              Premium Belgian dark chocolate blended with ice and milk, served with chocolate shavings and a cocoa-dusted rim.
+            </p>
+          </div>
+
+          <div class="menu-item-card rounded-lg">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <h4 class="text-xl serif italic mb-1 brittany-font">Snickers Fusion</h4>
+                <p class="text-coffee-medium/70 text-sm">Candy bar inspired delight</p>
+              </div>
+              <span class="price-tag">₹299</span>
+            </div>
+            <p class="text-coffee-medium/80 text-sm leading-relaxed">
+              A playful mix of chocolate, caramel, and peanut butter notes, topped with whipped cream and chopped peanuts.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-divider"></div>
+
+      <!-- Brownie Infusions Category -->
+      <div>
+        <div class="flex items-center gap-4 mb-10">
+          <div class="p-3 bg-[#F9F5F0] rounded-full">
+            <i data-lucide="dessert" class="w-8 h-8 menu-icon"></i>
+          </div>
+          <div>
+            <h3 class="text-3xl md:text-4xl serif italic brittany-font">Brownie Infusions</h3>
+            <p class="text-coffee-medium/60 text-sm">Decadent brownie transformations</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="menu-category-card p-8 rounded-lg">
+            <div class="flex items-start justify-between mb-6">
+              <div>
+                <h4 class="text-2xl serif italic brittany-font mb-2">Nutella Dream Crunch</h4>
+                <p class="text-coffee-medium/70 text-sm">Hazelnut chocolate heaven</p>
+              </div>
+              <span class="price-tag">₹329</span>
+            </div>
+            <p class="text-coffee-medium/80 mb-4 text-sm leading-relaxed">
+              Warm brownie layered with Nutella, topped with hazelnut praline crunch and vanilla bean ice cream.
+            </p>
+            <div class="text-xs text-coffee-medium/60 uppercase tracking-widest font-semibold">
+              Served Hot
+            </div>
+          </div>
+
+          <div class="menu-category-card p-8 rounded-lg">
+            <div class="flex items-start justify-between mb-6">
+              <div>
+                <h4 class="text-2xl serif italic brittany-font mb-2">Hazelnut Milk Chocolate</h4>
+                <p class="text-coffee-medium/70 text-sm">Creamy nutty indulgence</p>
+              </div>
+              <span class="price-tag">₹349</span>
+            </div>
+            <p class="text-coffee-medium/80 mb-4 text-sm leading-relaxed">
+              Milk chocolate infused brownie with roasted hazelnuts, drizzled with caramel and served with whipped cream.
+            </p>
+            <div class="text-xs text-coffee-medium/60 uppercase tracking-widest font-semibold">
+              Chef's Special
+            </div>
+          </div>
+
+          <div class="menu-category-card p-8 rounded-lg">
+            <div class="flex items-start justify-between mb-6">
+              <div>
+                <h4 class="text-2xl serif italic brittany-font mb-2">Kinder Kunafa</h4>
+                <p class="text-coffee-medium/70 text-sm">Middle Eastern fusion</p>
+              </div>
+              <span class="price-tag">₹379</span>
+            </div>
+            <p class="text-coffee-medium/80 mb-4 text-sm leading-relaxed">
+              Brownie baked with Kinder chocolate, layered with kunafa pastry, rose syrup, and pistachio dust.
+            </p>
+            <div class="text-xs text-coffee-medium/60 uppercase tracking-widest font-semibold">
+              Limited Edition
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Highlights Grid -->
-  <section id="menu" class="py-16 md:py-24 bg-white overflow-hidden">
+  <section id="menu" class="py-16 md:py-24 bg-[#F9F5F0] overflow-hidden">
     <div class="px-6 md:px-24 mb-12 md:px-16 text-center">
       <h2 class="text-4xl md:text-5xl serif italic mb-4">The Signature Selection</h2>
       <div class="h-px w-20 bg-[#C5A059] mx-auto"></div>
@@ -521,6 +777,31 @@
         x: 0, opacity: 1, duration: 1.5, ease: "expo.out", delay: 0.2
       });
 
+      // Drinks Menu Animations
+      gsap.to('.menu-category-card', {
+        scrollTrigger: {
+          trigger: '#drinks-menu',
+          start: "top 75%",
+        },
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power3.out"
+      });
+
+      gsap.to('.menu-item-card', {
+        scrollTrigger: {
+          trigger: '#drinks-menu',
+          start: "top 75%",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power2.out"
+      });
+
       // Review Cards Stagger Reveal
       gsap.to('.review-card', {
         scrollTrigger: {
@@ -577,8 +858,26 @@
     // Map interaction enhancement
     document.querySelectorAll('.map-container a').forEach(link => {
       link.addEventListener('click', (e) => {
-        // Let the link work normally - it will open Google Maps
         console.log('Opening Google Maps location for Melt \'n\' Mingle');
+      });
+    });
+
+    // Hover animations for menu cards
+    document.querySelectorAll('.menu-category-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        gsap.to(card, { 
+          y: -8, 
+          duration: 0.3, 
+          ease: "power2.out" 
+        });
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, { 
+          y: 0, 
+          duration: 0.3, 
+          ease: "power2.out" 
+        });
       });
     });
   </script>
